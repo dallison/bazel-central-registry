@@ -12,7 +12,6 @@ tasks:
     bazel: ${{ bazel }}
     build_targets:
     - '@subspace//client:subspace_client'
-    - '@subspace//c_client:subspace_c_client'
     - '@subspace//server:subspace_server'
 bcr_test_module:
   module_path: .
@@ -31,4 +30,3 @@ bcr_test_module:
       test_targets:
       - //client:client_test
       - //client:bridge_test
-      - //c_client:client_test
