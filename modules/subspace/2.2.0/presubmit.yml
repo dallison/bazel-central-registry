@@ -2,6 +2,8 @@ matrix:
   platform:
   - debian11
   - macos
+  - ubuntu2204
+  - ubuntu2404
   bazel:
   - 8.x
   - 9.x
@@ -12,6 +14,7 @@ tasks:
     bazel: ${{ bazel }}
     build_targets:
     - '@subspace//client:subspace_client'
+    - '@subspace//c_client:subspace_c_client'
     - '@subspace//server:subspace_server'
 bcr_test_module:
   module_path: .
@@ -19,6 +22,8 @@ bcr_test_module:
     platform:
     - debian11
     - macos
+    - ubuntu2204
+    - ubuntu2404
     bazel:
     - 8.x
     - 9.x
@@ -29,4 +34,5 @@ bcr_test_module:
       bazel: ${{ bazel }}
       test_targets:
       - //client:client_test
+      - //c_client:client_test
       - //client:bridge_test
